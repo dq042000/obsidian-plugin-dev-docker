@@ -1,0 +1,11 @@
+services:
+  obsidian-dev:
+    container_name: obsidian-plugin-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./plugins:/home/node/plugins:cached
+    working_dir: /home/node/plugins
+    command: tail -f /dev/null
+    tty: true
